@@ -1,5 +1,4 @@
 <div class="container">
-
   <img src="assets/img/burger.png" class="img-fluid mx-auto d-block">
 
   <h1 class="text-center">Eat-Da-Burger!</h1>
@@ -9,27 +8,30 @@
     <div class="col-lg-4">
       <ul class="list-group">
         {{#each burgers}}
-        {{#unless devoured}}
-        <li class="list-group-item">
-          <div class="d-inline-flex p-2">{{burger_name}}</div><button class="devour-btn btn btn-success float-right" data-id="{{this.id}}">Devour!</button>
-        </li><br>
-        {{/unless}}
+          {{#unless devoured}}
+            <li class="list-group-item">
+              <div class="d-inline-flex p-2">{{burger_name}}</div><button class="devour-btn btn btn-success float-right" data-id="{{this.id}}">Devour!</button>
+            </li><br>
+          {{/unless}}
         {{/each}}
       </ul>
     </div>
+
     <div class="col-lg-4">
       <ul class="list-group">
         {{#each burgers}}
-        {{#if devoured}}
-        <li class="list-group-item">
-          <div class="d-inline-flex p-1">{{burger_name}}</div><button class="delete-btn btn btn-light btn-sm float-right" data-id="{{this.id}}"><i class="fas fa-trash"></i></button>
-        </li>
-        {{/if}}
+          {{#if devoured}}
+            <li class="list-group-item">
+              <div class="d-inline-flex p-1">{{burger_name}}</div><button class="delete-btn btn btn-light btn-sm float-right" data-id="{{this.id}}"><i class="fas fa-trash"></i></button>
+            </li>
+          {{/if}}
         {{/each}}
       </ul>
     </div>
   </div>
+
   <br><br>
+
   <div class="row text-center">
     <div class="col-lg-4"></div>
     <div class="col-lg-4">
@@ -40,7 +42,6 @@
     </div>
 
     <button type="submit" class="btn btn-success">Add burger</button>
-
   </form>
     </div>
   </div>
