@@ -13,7 +13,7 @@
 <ul>
   {{#each burgers}}
     {{#if devoured}}
-      <p>{{burger_name}}<button class="delete-btn" data-id="{{this.id}}">Delete!</button></p>
+      <p>{{burger_name}}<button class="delete-btn" data-id="{{this.id}}"><i class="fas fa-trash"></i></button></p>
     {{/if}}
   {{/each}}
 </ul>
