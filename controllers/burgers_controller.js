@@ -18,7 +18,19 @@ router.post("/api/burgers", (req, res) => {
   });
 });
 
-router.delete("api/burgers/:id", (req, res) => {
+router.put("/api/burgers/:id", (req, res) => {
+  const condition = `id = ${req.params.id}`;
+
+  burger.update(req.body, condition, result => {
+    if (result.changedRows == 0) {
+      return res.status(404).end();
+    } else {
+      res.status(200).end();
+    }
+  });
+});
+
+router.delete("/api/burgers/:id", (req, res) => {
   const condition = `id = ${req.params.id}`;
 
   burger.delete(condition, result => {
